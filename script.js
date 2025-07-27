@@ -49,13 +49,15 @@ document.addEventListener("DOMContentLoaded", () => {
   // Handle contact modal open/close. When the contact link is clicked,
   // display the modal. Allow closing via the × button or clicking
   // outside the modal content.
-  const contactLink = document.getElementById("contact-link");
+  const contactLinks = document.querySelectorAll(".contact-link");
   const contactModal = document.getElementById("contact-modal");
   const closeBtn = contactModal ? contactModal.querySelector(".close-button") : null;
-  if (contactLink && contactModal && closeBtn) {
-    contactLink.addEventListener("click", (e) => {
-      e.preventDefault();
-      contactModal.style.display = "flex";
+  if (contactLinks.length && contactModal && closeBtn) {
+    contactLinks.forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        contactModal.style.display = "flex";
+      });
     });
     closeBtn.addEventListener("click", () => {
       contactModal.style.display = "none";
