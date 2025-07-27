@@ -8,16 +8,6 @@ body {
     color: #333;
 }
 
-/* Add margins for the page content */
-main {
-    max-width: 65%; /* Smaller margins */
-    margin: 20px auto;
-    padding: 0 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
 /* Header and navigation bar */
 header {
     position: fixed;
@@ -74,7 +64,7 @@ header {
 main {
     max-width: 65%;
     margin: 100px auto 20px auto; /* top margin offsets header height */
-    padding: 0 20px;
+    padding: 0 20px 5px;
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -108,11 +98,6 @@ main {
 .lang-button.active-lang {
     background-color: #7f57c9;
     color: white;
-}
-
-/* Section Styling */
-section {
-    margin-bottom: 30px;
 }
 
 h2 {
@@ -427,6 +412,103 @@ footer {
     padding: 20px;
     background-color: #333;
     color: white;
+}
+
+/* --------------------------------------------------------------------
+ * Responsive design rules
+ *
+ * The following media query adjusts the layout for smaller screens.  When
+ * the viewport width drops below 768px (common breakpoint for tablets
+ * and phones) the navigation bar stacks its elements, the main content
+ * area widens, and the about section shifts from a side‑by‑side layout
+ * to a stacked layout.  Collapsible rows and certification items also
+ * adopt a columnar layout, and excessive left padding on the content
+ * sections is reduced.  These adjustments ensure that text and controls
+ * remain legible and accessible on narrow devices.
+ */
+@media (max-width: 768px) {
+    /* Stack navigation items and language switcher vertically */
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 10px;
+        width: 100%;
+    }
+    .nav-links a {
+        padding: 5px;
+        font-size: 0.9em;
+    }
+    .language-switcher {
+        margin-top: 10px;
+    }
+
+    /* On small screens the header should scroll away with the content
+       instead of being fixed.  This prevents the profile image or other
+       elements from being hidden underneath the navigation bar. */
+    header {
+        position: static;
+    }
+
+    /* Widen the main content and reduce the top margin (header still fixed) */
+    main {
+        max-width: 95%;
+        /* When the header is not fixed, only a small top margin is needed */
+        margin: 0px auto;
+    }
+
+    /* Stack the profile image above the about text */
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    .profile-pic {
+        margin-right: 0;
+        margin-bottom: 20px;
+        width: 180px;
+        height: 180px;
+    }
+    .about-text {
+        width: 100%;
+    }
+
+    /* Adjust collapsible items and certifications to flow vertically */
+    .collapsible-container,
+    .certification {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    /* On narrow screens place titles and locations on separate lines.  By setting
+       the buttons to column layout and removing ``white-space: nowrap`` the
+       university or time range text will wrap rather than overflow. */
+    .collapsible,
+    .non-collapsible,
+    .certification {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .collapsible .place,
+    .non-collapsible .place,
+    .certification .place {
+        margin-left: 0;
+        margin-top: 5px;
+        text-align: left;
+        white-space: normal;
+        width: 100%;
+    }
+    .collapsible-container .date {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    /* Reduce indentation for content sections */
+    .content {
+        padding-left: 20px;
+    }
 }
 
 footer a {
