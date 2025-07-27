@@ -1,0 +1,546 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Add margins for the page content */
+main {
+    max-width: 65%; /* Smaller margins */
+    margin: 20px auto;
+    padding: 0 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header and navigation bar */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* New navbar layout using flexbox.  The ``navbar`` wrapper holds the
+   navigation links on the left and the language switcher on the right. */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* Use a gradient to further differentiate from the original theme.
+       The gradient transitions from a dark navy to a muted purple. */
+    background: linear-gradient(90deg, #1b263b 0%, #415a77 50%, #7f57c1 100%);
+    padding: 10px 20px;
+    color: #eceff4;
+}
+
+/* Container for navigation links */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Individual navigation link styling */
+.nav-links a {
+    color: #eceff4;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 5px 0;
+}
+
+/* Underline effect on hover */
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 2px;
+    background-color: #a173c9; /* adjust underline to softer purple */
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* Adjust spacing for nav when header is fixed */
+main {
+    max-width: 65%;
+    margin: 100px auto 20px auto; /* top margin offsets header height */
+    padding: 0 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Language switcher styling */
+/* Language switcher inside the navbar */
+.language-switcher {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.lang-button {
+    background-color: transparent;
+    color: #eceff4;
+    border: 1px solid #a173c9;
+    border-radius: 4px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: all 0.3s ease;
+}
+
+.lang-button:hover {
+    background-color: #a173c9;
+    color: white;
+}
+
+/* Active language button */
+.lang-button.active-lang {
+    background-color: #7f57c9;
+    color: white;
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+/* About Section with Profile Picture */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%; /* adjust this value as needed */
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 250px;
+    height: 350px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover; /* Ensures the image fits and is centered */
+    
+}
+
+.about-text {
+    flex: 1;
+}
+
+
+/* Collapsible Container Styling */
+.collapsible-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    width: 100%; /* Ensure the container spans the full width */
+    overflow: hidden; /* Prevents the container from expanding */
+}
+
+.collapsible-container .date {
+    font-style: italic;
+    color: #666;
+    margin-right: 10px; /* Adjust this to control spacing between date and button */
+    white-space: nowrap; /* Prevent the date from wrapping to a new line */
+    flex-shrink: 0; /* Prevents the date from shrinking */
+    width: 170px; /* Ensure a consistent width for the date column */
+    text-align: left;
+}
+
+/* Collapsible Buttons Styling */
+.collapsible {
+    /* Light lavender background for collapsible buttons */
+    background-color: #f5f1fb;
+    color: #333;
+    cursor: pointer;
+    padding: 5px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    flex-grow: 1; /* Ensures the button takes up the remaining space */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: hidden;
+}
+
+.collapsible::before {
+    content: "▸";
+    margin-right: 10px;
+    font-size: 12px;
+    transform: rotate(0deg);
+    transition: transform 0.3s ease;
+}
+
+.collapsible.active::before {
+    transform: rotate(90deg);
+}
+
+.collapsible.active {
+    font-weight: bold; /* Make text bold when the collapsible is active */
+    /* Highlight active collapsible with a slightly darker lavender */
+    background-color: #e8e0f5;
+}
+
+.collapsible .title {
+    flex-grow: 1; /* Allow the title to take up remaining space */
+    text-align: left;
+}
+
+.collapsible .place {
+    margin-left: auto; /* Pushes the place text to the far right */
+    font-style: italic;
+    color: #666;
+    white-space: nowrap; /* Prevents wrapping */
+    padding-left: 10px; /* Adds some padding to the left to separate from title */
+}
+
+.non-collapsible {
+    background-color: #eee;
+    color: #333;
+    cursor: pointer;
+    padding: 5px;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 16px;
+    border-radius: 5px;
+    flex-grow: 1; /* Ensures the button takes up the remaining space */
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    overflow: hidden;
+}
+
+.non-collapsible .title {
+    flex-grow: 1; /* Allow the title to take up remaining space */
+    text-align: left;
+    margin-left: 17px;;
+}
+
+.non-collapsible .place {
+    margin-left: auto; /* Pushes the place text to the far right */
+    font-style: italic;
+    color: #666;
+    white-space: nowrap; /* Prevents wrapping */
+    padding-left: 10px; /* Adds some padding to the left to separate from title */
+}
+
+
+
+.content {
+    box-sizing: border-box;
+    padding-left: 200px;
+    display: none;
+    text-align: left;
+    width: 100%; /* Ensures the content takes up full width */
+    overflow: auto;
+    word-wrap: break-word;
+    /* Light background and accent line for content containers */
+    background-color: #faf7fd;
+    border-left: 4px solid #a173c9;
+}
+
+.content ul {
+    margin: 10px 0;
+    padding-left: 20px;
+}
+
+.content ul li {
+    margin-bottom: 5px;
+}
+
+/* Download CV Button Styling */
+#downloadCvButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#downloadCvButton:hover {
+    background-color: #555;
+}
+
+    /* Button link used in the About section */
+    .button-link {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #333;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+
+    .button-link:hover {
+        background-color: #555;
+    }
+
+/* Download MINF Button Styling */
+#downloadMINFButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6e6e6e;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#downloadMINFButton:hover {
+    background-color: #555;
+}
+
+/* Download MINF2 Button Styling */
+#downloadMINF2Button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6e6e6e;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#downloadMINF2Button:hover {
+    background-color: #555;
+}
+
+/* Download Segmentation Button Styling */
+#downloadSegmentationButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6e6e6e;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+#downloadSegmentationButton:hover {
+    background-color: #555;
+}
+
+/* Download Sheep Button Styling */
+#downloadSheepButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6e6e6e;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#downloadSheepButton:hover {
+    background-color: #555;
+}
+
+#downloadIoTButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6e6e6e;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 0px;
+}
+
+#downloadIoTButton2 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #6e6e6e;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#downloadIoTButton:hover {
+    background-color: #555;
+}
+
+#downloadIoTButton2:hover {
+    background-color: #555;
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .icon {
+    width: 24px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+#particles-js {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: transparent;
+}
+
+.certification {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    width: 100%; /* Ensures the container spans the full width */
+}
+
+.certification .title {
+    font-weight: bold;
+    flex-grow: 1;  /* Ensures the title takes up available space */
+}
+
+.certification .place {
+    font-style: italic;
+    color: #666;
+    text-align: right;
+    white-space: nowrap; /* Prevents the place text from wrapping */
+    margin-left: 20px; /* Adds a little space between the title and place */
+}
+
+.research-interests-container {
+    width: 100%; /* Adjust this value as needed */
+    align-items: center;
+    justify-content: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#sort-controls {
+    margin-bottom: 15px;
+}
+
+#sortOrder {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+
+.projects-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#sort-controls {
+    margin-left: auto;
+    margin-top: auto;
+}
+
+/* Modal styles for contact information */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px 30px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+}

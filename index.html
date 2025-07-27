@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Benjamin Henriquez Soto - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Reuse the original icon for consistency -->
+    <link rel="icon" type="image/png" href="files/icon.png">
+</head>
+<body>
+    <!-- Particle background container -->
+    <div id="particles-js"></div>
+
+    <!-- Site header with navigation links and language switcher -->
+    <header>
+        <!-- Navigation bar with links and a language switcher aligned to the right. -->
+        <nav class="navbar">
+            <div class="nav-links">
+                <a href="#about"><span class="lang-en">About</span><span class="lang-es">Acerca&nbsp;de</span></a>
+                <a href="#projects"><span class="lang-en">Projects</span><span class="lang-es">Proyectos</span></a>
+                <a href="#experience"><span class="lang-en">Experience</span><span class="lang-es">Experiencia</span></a>
+                <a href="#education"><span class="lang-en">Education</span><span class="lang-es">Educación</span></a>
+                <a href="#skills"><span class="lang-en">Skills</span><span class="lang-es">Habilidades</span></a>
+                <a href="#certifications"><span class="lang-en">Certifications</span><span class="lang-es">Certificaciones</span></a>
+                <a href="#" id="contact-link"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a>
+            </div>
+            <div class="language-switcher">
+                <button class="lang-button" data-lang="en">English</button>
+                <button class="lang-button" data-lang="es">Español</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <br>
+        <!-- About Section (bilingual) -->
+        <section id="about">
+            <div class="about-container">
+                <!-- Profile image of Benjamin (abstract illustration) -->
+                <img src="files/profile_photo.JPG" alt="Benjamin Henriquez Soto" class="profile-pic">
+                <div class="about-text">
+                    <!-- The heading is shown in both languages.  Two separate
+                         headings allow the script to toggle visibility. -->
+                    <h1 class="lang-en">Benjamin Henriquez Soto</h1>
+                    <h1 class="lang-es">Benjamín Henríquez Soto</h1>
+                    <!-- Short tagline summarising his disciplines -->
+                    <p class="lang-en">Mathematical &amp; Computational Engineering Student&nbsp;|&nbsp;Robotics&nbsp;|&nbsp;Computer Vision (Planning&nbsp;&amp;&nbsp;SLAM)</p>
+                    <p class="lang-es">Estudiante de Ingeniería Civil Matemática y Computacional&nbsp;|&nbsp;Robótica&nbsp;|&nbsp;Visión por Computador (Planificación&nbsp;y&nbsp;SLAM)</p>
+                    <!-- English biography -->
+                    <div class="lang-en">
+                        <p>I am a <strong>Mathematical and Computational Engineering</strong> student at UC Chile, primarily interested in the intersection between robotics and computer vision — especially planning and SLAM. My work is grounded in the fundamentals of physics and mathematics, and I enjoy tackling problems that combine rigorous theory with real‑world applications.</p>
+                        <p>In my leisure time, I enjoy watching series, doing exercise, tuning into Lex Fridman podcasts and listening to music Feel free to reach out if you’d like to collaborate or chat!</p>
+                        <!-- External link to GitHub profile -->
+                        <a href="https://github.com/bhenriquezsoto" target="_blank" class="button-link">View My GitHub</a>
+                    </div>
+                    <!-- Spanish biography -->
+                    <div class="lang-es">
+                        <p>Soy estudiante de <strong>Ingeniería Civil Matemática y Computacional</strong> en la UC (Chile), interesado principalmente en la intersección entre la robótica y la visión por computador — específicamente en planificación y SLAM. Mi trabajo se basa en los fundamentos de la física y las matemáticas, y disfruto abordar problemas que combinan la teoría con aplicaciones reales.</p>
+                        <p>En mi tiempo libre, disfruto ver series, hacer ejercicio, ver los podcasts de Lex Fridman y escuchar musica. ¡No dudes en contactarme si quieres colaborar o conversar!</p>
+                        <!-- External link to GitHub profile -->
+                        <a href="https://github.com/bhenriquezsoto" target="_blank" class="button-link">Ver mi GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section (bilingual with collapsible items) -->
+        <section id="projects">
+            <h2><span class="lang-en">Projects</span><span class="lang-es">Proyectos</span></h2>
+
+            <!-- Computer Vision Project: Pet Segmentation -->
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    <span class="title">
+                        <span class="lang-en">Computer Vision Project: Pet Segmentation</span>
+                        <span class="lang-es">Proyecto de Visión por Computador: Segmentación de Mascotas</span>
+                    </span>
+                    <span class="place">– University of Edinburgh (2024/25)</span>
+                </button>
+            </div>
+            <div class="content">
+                <div class="lang-en">
+                    <ul>
+                        <li>Developed an interactive demo for pet segmentation where users can upload an image and click on a pet to generate its segmentation mask.</li>
+                        <li>Implemented multiple deep learning models such as Point‑based UNet, standard UNet, CLIP and Auto‑Encoder approaches using PyTorch.</li>
+                        <li>Evaluated models on the Oxford III Pet dataset, achieving a mean Dice score of over 80&nbsp;% for the CLIP model.</li>
+                        <li>Collaborated with a teammate to analyze training parameters, optimize loss functions and compare performance metrics.</li>
+                    </ul>
+                    <p style="margin: 0 0 10px 0;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub Icon" style="width: 20px; vertical-align: middle; margin-right: 5px;">
+                        <a href="https://github.com/bhenriquezsoto/computer-vision-project" target="_blank" style="color: #7f57c1; text-decoration: none;">github.com/bhenriquezsoto/computer-vision-project</a>
+                    </p>
+                    <p><a href="https://huggingface.co/spaces/bhenriquezsoto/point-based-segmentation-1" target="_blank" style="color: #7f57c1; text-decoration: none;">Interactive Demo</a></p>
+                </div>
+                <div class="lang-es">
+                    <ul>
+                        <li>Desarrollé un demo interactivo para segmentación de mascotas, donde los usuarios pueden subir una imagen y hacer clic en una mascota para generar su máscara de segmentación.</li>
+                        <li>Implementé múltiples modelos de aprendizaje profundo como Point‑UNet, UNet, CLIP y Auto‑Encoder usando PyTorch.</li>
+                        <li>Evalué los modelos en el conjunto de datos Oxford&nbsp;III Pet, logrando un puntaje medio Dice superior al 80&nbsp;% para el modelo CLIP.</li>
+                        <li>Colaboré con un compañero para analizar parámetros de entrenamiento, optimizar funciones de pérdida y comparar métricas de desempeño.</li>
+                    </ul>
+                    <p style="margin: 0 0 10px 0;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Icono GitHub" style="width: 20px; vertical-align: middle; margin-right: 5px;">
+                        <a href="https://github.com/bhenriquezsoto/computer-vision-project" target="_blank" style="color: #7f57c1; text-decoration: none;">github.com/bhenriquezsoto/computer-vision-project</a>
+                    </p>
+                    <p><a href="https://huggingface.co/spaces/bhenriquezsoto/point-based-segmentation-1" target="_blank" style="color: #7f57c1; text-decoration: none;">Demo interactivo</a></p>
+                </div>
+            </div>
+
+            <!-- Food Orders Web App -->
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    <span class="title">
+                        <span class="lang-en">Food Orders Web App</span>
+                        <span class="lang-es">Aplicación Web de Pedidos de Comida</span>
+                    </span>
+                    <span class="lang-en" style="color: #666; font-style: italic;">– Personal Project (2023/24)</span>
+                    <span class="lang-es" style="color: #666; font-style: italic;">– Proyecto Personal (2023/24)</span>
+
+                </button>
+            </div>
+            <div class="content">
+                <div class="lang-en">
+                    <ul>
+                        <li>Created a monolithic web application for managing food orders, allowing users to browse products, create orders and manage order status.</li>
+                        <li>Built with React and Tailwind CSS on the frontend and Node.js on the backend, following best practices for state management and component design.</li>
+                        <li>Designed a responsive user interface in Spanish titled <em>Gestor de pedidos</em> (“Order Manager”), improving user experience.</li>
+                        <li>Developed this project to strengthen my full‑stack development skills and learn about deployment on static hosting platforms.</li>
+                    </ul>
+                    <p style="margin: 0 0 10px 0;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub Icon" style="width: 20px; vertical-align: middle; margin-right: 5px;">
+                        <a href="https://github.com/bhenriquezsoto/food-orders" target="_blank" style="color: #7f57c1; text-decoration: none;">github.com/bhenriquezsoto/food-orders</a>
+                    </p>
+                </div>
+                <div class="lang-es">
+                    <ul>
+                        <li>Creé una aplicación web monolítica para gestionar pedidos de comida, permitiendo a los usuarios explorar productos, crear pedidos y gestionar el estado de los pedidos.</li>
+                        <li>Construida con React y Tailwind CSS en el frontend y Node.js en el backend, siguiendo buenas prácticas para la gestión de estado y el diseño de componentes.</li>
+                        <li>Diseñé una interfaz de usuario responsiva en español titulada <em>Gestor de pedidos</em>, mejorando la experiencia del usuario.</li>
+                        <li>Desarrollé este proyecto para fortalecer mis habilidades de desarrollo full stack y aprender sobre el despliegue en plataformas de alojamiento estático.</li>
+                    </ul>
+                    <p style="margin: 0 0 10px 0;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Icono GitHub" style="width: 20px; vertical-align: middle; margin-right: 5px;">
+                        <a href="https://github.com/bhenriquezsoto/food-orders" target="_blank" style="color: #7f57c1; text-decoration: none;">github.com/bhenriquezsoto/food-orders</a>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Academic Performance Analysis -->
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    <span class="title">
+                        <span class="lang-en">Academic Performance Analysis (IIC2026)</span>
+                        <span class="lang-es">Análisis de Rendimiento Académico (IIC2026)</span>
+                    </span>
+                    <span class="lang-en" style="color: #666; font-style: italic;">– Pontificia Universidad Catolica de Chile (2023)</span>
+                    <span class="lang-es" style="color: #666; font-style: italic;">– Pontificia Universidad Catolica de Chile (2023) </span>
+                </button>
+            </div>
+            <div class="content">
+                <div class="lang-en">
+                    <ul>
+                        <li>Analyzed academic performance data from Chilean educational institutions using a dataset of regional metrics.</li>
+                        <li>Processed geographic data (TopoJSON) to create interactive visualizations that explore regional disparities and trends.</li>
+                        <li>Developed scripts for data cleaning and statistical analysis to extract insights on factors affecting academic achievement.</li>
+                    </ul>
+                    <p style="margin: 0 0 10px 0;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub Icon" style="width: 20px; vertical-align: middle; margin-right: 5px;">
+                        <a href="https://github.com/bhenriquezsoto/rendimiento_academico_iic2026" target="_blank" style="color: #7f57c1; text-decoration: none;">github.com/bhenriquezsoto/rendimiento_academico_iic2026</a>
+                    </p>
+                </div>
+                <div class="lang-es">
+                    <ul>
+                        <li>Analicé datos de rendimiento académico de instituciones educacionales chilenas utilizando un conjunto de métricas regionales.</li>
+                        <li>Procesé datos geográficos (TopoJSON) para crear visualizaciones interactivas que exploran disparidades y tendencias regionales.</li>
+                        <li>Desarrollé scripts para limpieza de datos y análisis estadístico que extraen conocimientos sobre factores que afectan el rendimiento académico.</li>
+                    </ul>
+                    <p style="margin: 0 0 10px 0;">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="Icono GitHub" style="width: 20px; vertical-align: middle; margin-right: 5px;">
+                        <a href="https://github.com/bhenriquezsoto/rendimiento_academico_iic2026" target="_blank" style="color: #7f57c1; text-decoration: none;">github.com/bhenriquezsoto/rendimiento_academico_iic2026</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section (bilingual with collapsible items) -->
+        <section id="experience">
+            <h2><span class="lang-en">Experience</span><span class="lang-es">Experiencia</span></h2>
+
+            <!-- Undergraduate Research Assistant (drones) -->
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    <span class="title">
+                        <span class="lang-en">Undergraduate Research Assistant</span>
+                        <span class="lang-es">Asistente de Investigación</span>
+                    </span>
+                    <span class="place">– Escuela de Ingeniería UC (Jul 2025 – Present)</span>
+                </button>
+            </div>
+            <div class="content">
+                <div class="lang-en">
+                    <ul>
+                        <li>Developing a simulation to enable active sensing with a drone, allowing for more efficient data collection and navigation.</li>
+                        <li>Collaborating with a research group exploring robotics and perception to design and test algorithms.</li>
+                    </ul>
+                </div>
+                <div class="lang-es">
+                    <ul>
+                        <li>Desarrollo de una simulación para realizar <em>active sensing</em> con un dron, permitiendo una recolección de datos y navegación más eficientes.</li>
+                        <li>Colaboración con un grupo de investigación que explora robótica y percepción para diseñar y probar algoritmos.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- First Software Engineer at MOME -->
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    <span class="title">
+                        <span class="lang-en">First Software Engineer</span>
+                        <span class="lang-es">Primer Ingeniero de Software</span>
+                    </span>
+                    <span class="place">– MOME (Aug 2024 – Dec 2024)</span>
+                </button>
+            </div>
+            <div class="content">
+                <div class="lang-en">
+                    <ul>
+                        <li>Joined an early‑stage team to design and implement core features for a startup’s digital services.</li>
+                        <li>Collaborated with cross‑functional teams to deliver software in an agile environment.</li>
+                    </ul>
+                </div>
+                <div class="lang-es">
+                    <ul>
+                        <li>Me incorporé a un equipo en etapa temprana para diseñar e implementar funcionalidades clave para los servicios digitales de una startup.</li>
+                        <li>Colaboré con equipos multidisciplinarios para entregar software en un entorno ágil.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Drone Team Member -->
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    <span class="title">
+                        <span class="lang-en">Drone Team Member</span>
+                        <span class="lang-es">Miembro del Equipo de Drones</span>
+                    </span>
+                    <span class="place">– Equipo Caleuche UC (Jul 2024 – Dec 2024)</span>
+                </button>
+            </div>
+            <div class="content">
+                <div class="lang-en">
+                    <ul>
+                        <li>Joined the university’s drone team to design and build autonomous aerial vehicles.</li>
+                        <li>Integrated hardware and software for flight control and sensor fusion.</li>
+                    </ul>
+                </div>
+                <div class="lang-es">
+                    <ul>
+                        <li>Me uní al equipo universitario de drones para diseñar y construir vehículos aéreos autónomos.</li>
+                        <li>Integré hardware y software para control de vuelo y fusión de sensores.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Teaching Assistant -->
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    <span class="title">
+                        <span class="lang-en">Teaching Assistant</span>
+                        <span class="lang-es">Ayudante de Docencia</span>
+                    </span>
+                    <span class="place">– Escuela de Ingeniería UC (Mar 2023 – Dec 2024)</span>
+                </button>
+            </div>
+            <div class="content">
+                <div class="lang-en">
+                    <ul>
+                        <li>Assisted graduate course “Advanced Techniques in Data Mining” (2024‑2) and undergraduate courses “Data Mining” (2023‑2, 2024‑1) and “Probability and Statistics Laboratory” (2023‑1).</li>
+                        <li>Guided students during labs, graded assignments and worked with instructors to develop course materials.</li>
+                    </ul>
+                </div>
+                <div class="lang-es">
+                    <ul>
+                        <li>Ayudé en el curso de posgrado “Técnicas Avanzadas de Minería de Datos” (2024‑2) y en los cursos de pregrado “Minería de Datos” (2023‑2, 2024‑1) y “Laboratorio de Probabilidad y Estadística” (2023‑1).</li>
+                        <li>Guié a los estudiantes durante los laboratorios, evalué tareas y colaboré con los docentes en la elaboración de materiales.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Data Scientist -->
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    <span class="title">
+                        <span class="lang-en">Data Scientist</span>
+                        <span class="lang-es">Científico de Datos</span>
+                    </span>
+                    <span class="place">– Fingo (Jan 2024 – Feb 2024)</span>
+                </button>
+            </div>
+            <div class="content">
+                <div class="lang-en">
+                    <ul>
+                        <li>Developed a visualization tool using Cytoscape.js and Python to analyze relationships between companies (~8 million records), improving decision‑making on financial advances.</li>
+                        <li>Implemented automatic monitoring to detect deviations in machine learning models, enhancing reliability and decision‑making.</li>
+                    </ul>
+                </div>
+                <div class="lang-es">
+                    <ul>
+                        <li>Desarrollé una herramienta de visualización utilizando Cytoscape.js y Python para analizar relaciones entre empresas (aprox. 8 millones de registros), mejorando la toma de decisiones sobre adelantos financieros.</li>
+                        <li>Implementé un sistema de monitoreo automático para detectar desviaciones en modelos de aprendizaje automático, mejorando su fiabilidad y la toma de decisiones.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- AI Application Engineer -->
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    <span class="title">
+                        <span class="lang-en">AI Application Engineer</span>
+                        <span class="lang-es">Ingeniero de Aplicaciones de IA</span>
+                    </span>
+                    <span class="place">– NotCo (Jul 2023 – Dec 2023)</span>
+                </button>
+            </div>
+            <div class="content">
+                <div class="lang-en">
+                    <ul>
+                        <li>Automated report generation using cloud services and GitHub CI/CD, reducing turnaround time from three days to daily.</li>
+                        <li>Developed and managed MongoDB collections to support data‑driven reporting and evaluation of AI tools.</li>
+                    </ul>
+                </div>
+                <div class="lang-es">
+                    <ul>
+                        <li>Automatizé la generación de reportes utilizando servicios en la nube y CI/CD con GitHub, reduciendo el tiempo de tres días a entregas diarias.</li>
+                        <li>Desarrollé y administré colecciones de MongoDB para apoyar informes basados en datos y la evaluación de herramientas de IA.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Undergraduate Research Assistant 2022 -->
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    <span class="title">
+                        <span class="lang-en">Undergraduate Research Assistant</span>
+                        <span class="lang-es">Asistente de Investigación</span>
+                    </span>
+                    <span class="place">– Escuela de Ingeniería UC (Feb 2022 – Aug 2022)</span>
+                </button>
+            </div>
+            <div class="content">
+                <div class="lang-en">
+                    <ul>
+                        <li>Evaluated neural network models for image registration of wide‑field skin pictures to automate the follow‑up of pigmented skin lesions.</li>
+                        <li>Conducted a literature review and wrote a report summarizing and comparing available models.</li>
+                    </ul>
+                </div>
+                <div class="lang-es">
+                    <ul>
+                        <li>Evalué modelos de redes neuronales para el registro de imágenes de piel de campo amplio con el fin de automatizar el seguimiento de lesiones cutáneas pigmentadas.</li>
+                        <li>Realicé una revisión bibliográfica y redacté un informe que resume y compara los modelos disponibles.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section (bilingual) -->
+        <section id="education">
+            <h2><span class="lang-en">Education</span><span class="lang-es">Educación</span></h2>
+            <!-- Collapsible education entries -->
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    <span class="title">
+                        <span class="lang-en">Title Degree in Computational Mathematics Engineering</span>
+                        <span class="lang-es">Ingenieria Civil Matemática Computacional</span>
+                    </span>
+                    <span class="place">– Pontificia Universidad Católica de Chile (Mar 2020 – Dec 2026)</span>
+                </button>
+            </div>
+            <div class="content">
+                <div class="lang-en">
+                    <ul>
+                        <li>Coursework: Real Analysis, Software Engineering, Databases, Information Visualization, Data Mining, Computer Architecture, Artificial Intelligence, Deep Learning, Pattern Recognition, Specialty Project (Capstone), Developmental Psychology I.</li>
+                        <li>Active member of research and student organizations; mentor junior students and participate in academic competitions.</li>
+                    </ul>
+                </div>
+                <div class="lang-es">
+                    <ul>
+                        <li>Cursos: Análisis Real, Ingeniería de Software, Bases de Datos, Visualización de Información, Minería de Datos, Arquitectura de Computadores, Inteligencia Artificial, Aprendizaje Profundo, Reconocimiento de Patrones, Proyecto de Especialidad (Capstone), Psicología del Desarrollo I.</li>
+                        <li>Miembro activo de grupos de investigación y organizaciones estudiantiles; mentor de estudiantes y participante en competencias académicas.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    <span class="title">
+                        <span class="lang-en">Visiting Undergraduate Student in Informatics &amp; Mathematics</span>
+                        <span class="lang-es">Estudiante visitante de Informática y Matemáticas</span>
+                    </span>
+                    <span class="place">– The University of Edinburgh (Jan 2025 – Jun 2025)</span>
+                </button>
+            </div>
+            <div class="content">
+                <div class="lang-en">
+                    <ul>
+                        <li>Studied advanced courses in mathematical physics, computer vision, computer graphics and machine learning while broadening cultural and academic perspectives.</li>
+                        <li>Participated in student societies such as New Scotland Dance Society and Rifle Club.</li>
+                    </ul>
+                </div>
+                <div class="lang-es">
+                    <ul>
+                        <li>Realicé cursos avanzados en fisica matematica, visión por computador, computacion grafica y aprendizaje automático mientras ampliaba mis perspectivas culturales y académicas.</li>
+                        <li>Participé en sociedades estudiantiles como New Scotland Dance Society y Rifle Club.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section (bilingual) -->
+        <section id="skills">
+            <h2><span class="lang-en">Skills</span><span class="lang-es">Habilidades</span></h2>
+            <div class="lang-en">
+                <ul>
+                    <li><strong>Programming Languages:</strong> Python, JavaScript, C/C++, MATLAB</li>
+                    <li><strong>Frameworks &amp; Libraries:</strong> PyTorch, TensorFlow, NumPy, ROS, React</li>
+                    <li><strong>Tools:</strong> Git, Docker, Linux, Cytoscape.js</li>
+                    <li><strong>AI &amp; ML:</strong> Deep Learning, Reinforcement Learning, Computer Vision, Mathematical Modelling</li>
+                    <li><strong>Languages:</strong> Spanish (native), English (C1), German (elementary)</li>
+                </ul>
+            </div>
+            <div class="lang-es">
+                <ul>
+                    <li><strong>Lenguajes de Programación:</strong> Python, JavaScript, C/C++, MATLAB</li>
+                    <li><strong>Frameworks y Librerías:</strong> PyTorch, TensorFlow, NumPy, ROS, React</li>
+                    <li><strong>Herramientas:</strong> Git, Docker, Linux, Cytoscape.js</li>
+                    <li><strong>IA y ML:</strong> Deep Learning, Aprendizaje por Refuerzo, Visión por Computador, Modelamiento Matemático</li>
+                    <li><strong>Idiomas:</strong> Español (nativo), Inglés (C1), Alemán (básico)</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Certifications &amp; Honors Section (bilingual) -->
+        <section id="certifications">
+            <h2><span class="lang-en">Certifications &amp; Honors</span><span class="lang-es">Certificaciones y Reconocimientos</span></h2>
+            <div class="lang-en">
+                <ul>
+                    <li>Deep Learning Specialization – <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/RJCRBZLAW5QS" target="_blank" style="color: #7f57c1; text-decoration: none;">Coursera&nbsp;Certificate</a></li>
+                    <li>IELTS Academic (Level C1)</li>
+                    <li>3rd place DO‑SAFIOS competition</li>
+                </ul>
+            </div>
+            <div class="lang-es">
+                <ul>
+                    <li>Especialización en Deep Learning – <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/RJCRBZLAW5QS" target="_blank" style="color: #7f57c1; text-decoration: none;">Certificado&nbsp;de&nbsp;Coursera</a></li>
+                    <li>IELTS Académico (Nivel C1)</li>
+                    <li>3er lugar competencia DO‑SAFIOS</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact section removed; replaced by modal defined after main -->
+    </main>
+
+    <!-- Contact Modal displayed when the user clicks the contact link. Hidden by default. -->
+    <div id="contact-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></h2>
+            <div class="lang-en">
+                <p><strong>Location:</strong> Santiago, Chile</p>
+                <p><strong>Email:</strong> <a href="mailto:benja20029@uc.cl" style="color:#7f57c1;text-decoration:none;">benja20029@uc.cl</a></p>
+                <p><strong>Phone:</strong> <a href="tel:+56976011853" style="color:#7f57c1;text-decoration:none;">+56&nbsp;9&nbsp;7601&nbsp;1853</a></p>
+                <p>
+                    <a href="https://github.com/bhenriquezsoto" target="_blank" style="color:#7f57c1;text-decoration:none;">GitHub</a>
+                    &nbsp;|&nbsp;
+                    <a href="https://www.linkedin.com/in/benjamin-henriquez-soto/" target="_blank" style="color:#7f57c1;text-decoration:none;">LinkedIn</a>
+                </p>
+            </div>
+            <div class="lang-es">
+                <p><strong>Ubicación:</strong> Santiago, Chile</p>
+                <p><strong>Correo:</strong> <a href="mailto:benja20029@uc.cl" style="color:#7f57c1;text-decoration:none;">benja20029@uc.cl</a></p>
+                <p><strong>Teléfono:</strong> <a href="tel:+56976011853" style="color:#7f57c1;text-decoration:none;">+56&nbsp;9&nbsp;7601&nbsp;1853</a></p>
+                <p>
+                    <a href="https://github.com/bhenriquezsoto" target="_blank" style="color:#7f57c1;text-decoration:none;">GitHub</a>
+                    &nbsp;|&nbsp;
+                    <a href="https://www.linkedin.com/in/benjamin-henriquezsoto/" target="_blank" style="color:#7f57c1;text-decoration:none;">LinkedIn</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Load particles.js from CDN and custom script -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
