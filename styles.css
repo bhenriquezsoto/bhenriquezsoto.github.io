@@ -4,7 +4,7 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #181f2a;
     color: #333;
 }
 
@@ -32,9 +32,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Use a gradient to further differentiate from the original theme.
-       The gradient transitions from a dark navy to a muted purple. */
-    background: linear-gradient(90deg, #1b263b 0%, #415a77 50%, #7f57c1 100%);
+    /* Cambiado a azul sólido */
+    background: #1b263b;
     padding: 10px 20px;
     color: #eceff4;
 }
@@ -132,15 +131,15 @@ h1 {
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
-    width: 80%; /* adjust this value as needed */
+    width: 90%; /* adjust this value as needed */
     margin-bottom: 20px;
 }
 
 .profile-pic {
     width: 250px;
-    height: 350px;
+    height: 250px;
     border-radius: 50%;
-    margin-right: 20px;
+    margin-right: 70px;
     object-fit: cover; /* Ensures the image fits and is centered */
     
 }

@@ -24,6 +24,28 @@ document.addEventListener("DOMContentLoaded", () => {
       const content = container ? container.nextElementSibling : null;
       if (content && content.classList.contains("content")) {
         content.style.display = content.style.display === "block" ? "none" : "block";
+        // Centrar el contenedor solo si se está expandiendo
+        if (content.style.display === "block") {
+          container.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+      }
+    });
+  });
+
+  // Scroll suave para los enlaces de la navbar, compensando la altura del header fijo
+  document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
+    link.addEventListener('click', function(e) {
+      const targetId = this.getAttribute('href').slice(1);
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        e.preventDefault();
+        const header = document.querySelector('header');
+        const headerHeight = header ? header.offsetHeight : 0;
+        const sectionTop = targetSection.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({
+          top: sectionTop - headerHeight - 10, // el -10 es un pequeño margen opcional
+          behavior: 'smooth'
+        });
       }
     });
   });
@@ -111,21 +133,23 @@ particlesJS("particles-js", {
       value: 60,
       density: { enable: true, value_area: 700 },
     },
-    // Use a soft purple palette distinct from the original theme
-    color: { value: "#b6a7d8" },
+    // Cambia el color a blanco para mayor contraste
+    color: { value: "#ffffff" },
     shape: {
       type: "circle",
       stroke: { width: 0, color: "#ffffff" },
       polygon: { nb_sides: 5 },
     },
-    opacity: { value: 0.4, random: true },
-    size: { value: 2.5, random: true },
+    // Aumenta la opacidad
+    opacity: { value: 0.7, random: true },
+    // Aumenta el tamaño
+    size: { value: 3.5, random: true },
     line_linked: {
       enable: true,
       distance: 130,
-      color: "#7f57c1",
-      opacity: 0.3,
-      width: 1,
+      color: "#ffffff",
+      opacity: 0.5,
+      width: 1.2,
     },
     move: {
       enable: true,
