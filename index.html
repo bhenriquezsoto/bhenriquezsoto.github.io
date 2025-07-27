@@ -36,8 +36,23 @@
         <!-- About Section (bilingual) -->
         <section id="about">
             <div class="about-container">
-                <!-- Profile image of Benjamin (abstract illustration) -->
-                <img src="files/profile_photo.JPG" alt="Benjamin Henriquez Soto" class="profile-pic">
+                <!-- Left column: profile photo with social icons and meeting scheduler -->
+                <div class="about-left">
+                    <!-- Profile image of Benjamin -->
+                    <img src="files/profile_photo.JPG" alt="Benjamin Henriquez Soto" class="profile-pic">
+                    <!-- Social media icons placed below the profile photo -->
+                    <div class="social-icons">
+                        <a href="https://www.linkedin.com/in/benjamin-henriquez-soto/" target="_blank">
+                            <img src="files/linkedin-logo.png" alt="LinkedIn">
+                        </a>
+                        <a href="mailto:benja20029@gmail.com">
+                            <img src="files/mail-logo.png" alt="Email">
+                        </a>
+                        <a href="https://github.com/bhenriquezsoto" target="_blank">
+                            <img src="files/github-logo.png" alt="GitHub">
+                        </a>
+                    </div>
+                </div>
                 <div class="about-text">
                     <!-- The heading is shown in both languages.  Two separate
                          headings allow the script to toggle visibility. -->
@@ -50,17 +65,23 @@
                     <div class="lang-en">
                         <p>I am a <strong>Mathematical and Computational Engineering</strong> student at UC Chile, primarily interested in the intersection between robotics and computer vision — especially planning and SLAM. My work is grounded in the fundamentals of physics and mathematics, and I enjoy tackling problems that combine rigorous theory with real‑world applications.</p>
                         <p>In my leisure time, I enjoy watching series, doing exercise, tuning into Lex Fridman podcasts and listening to music Feel free to reach out if you’d like to collaborate or chat!</p>
-                        <!-- External link to GitHub profile and contact button -->
-                        <a href="https://github.com/bhenriquezsoto" target="_blank" class="button-link">View My GitHub</a>
-                        <a href="#" class="button-link contact-link"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a>
+                        <!-- External link to GitHub profile and meeting scheduler -->
+                        <a href="https://github.com/bhenriquezsoto" target="_blank" class="button-link">View&nbsp;My&nbsp;GitHub</a>
+                        <a href="https://calendly.com/bhenriquezsoto/30min" target="_blank" class="button-link schedule-link">
+                            <span class="lang-en">Schedule&nbsp;Meeting</span>
+                            <span class="lang-es">Agendar&nbsp;reunión</span>
+                        </a>
                     </div>
                     <!-- Spanish biography -->
                     <div class="lang-es">
                         <p>Soy estudiante de <strong>Ingeniería Civil Matemática y Computacional</strong> en la UC (Chile), interesado principalmente en la intersección entre la robótica y la visión por computador — específicamente en planificación y SLAM. Mi trabajo se basa en los fundamentos de la física y las matemáticas, y disfruto abordar problemas que combinan la teoría con aplicaciones reales.</p>
                         <p>En mi tiempo libre, disfruto ver series, hacer ejercicio, ver los podcasts de Lex Fridman y escuchar musica. ¡No dudes en contactarme si quieres colaborar o conversar!</p>
-                        <!-- External link to GitHub profile and contact button -->
-                        <a href="https://github.com/bhenriquezsoto" target="_blank" class="button-link">Ver mi GitHub</a>
-                        <a href="#" class="button-link contact-link"><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></a>
+                        <!-- External link to GitHub profile and meeting scheduler -->
+                        <a href="https://github.com/bhenriquezsoto" target="_blank" class="button-link">Ver&nbsp;mi&nbsp;GitHub</a>
+                        <a href="https://calendly.com/bhenriquezsoto/30min" target="_blank" class="button-link schedule-link">
+                            <span class="lang-en">Schedule&nbsp;Meeting</span>
+                            <span class="lang-es">Agendar&nbsp;reunión</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -463,29 +484,16 @@
         <!-- Contact section removed; replaced by modal defined after main -->
     </main>
 
-    <!-- Contact Modal displayed when the user clicks the contact link. Hidden by default. -->
-    <div id="contact-modal" class="modal">
+    <!-- Meeting Modal displayed when the user clicks the schedule link. Hidden by default. -->
+    <div id="meeting-modal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h2><span class="lang-en">Contact</span><span class="lang-es">Contacto</span></h2>
-            <div class="lang-en">
-                <p><strong>Location:</strong> Santiago, Chile</p>
-                <p><strong>Email:</strong> <a href="mailto:benja20029@uc.cl" style="color:#7f57c1;text-decoration:none;">benja20029@uc.cl</a></p>
-                <p><strong>Phone:</strong> <a href="tel:+56940624638" style="color:#7f57c1;text-decoration:none;">+56&nbsp;9&nbsp;4062&nbsp;4638</a></p>
-                <p>
-                    <a href="https://www.linkedin.com/in/benjamin-henriquez-soto/" target="_blank" style="color:#7f57c1;text-decoration:none;">LinkedIn</a>
-                </p>
-            </div>
-            <div class="lang-es">
-                <p><strong>Ubicación:</strong> Santiago, Chile</p>
-                <p><strong>Correo:</strong> <a href="mailto:benja20029@uc.cl" style="color:#7f57c1;text-decoration:none;">benja20029@uc.cl</a></p>
-                <p><strong>Teléfono:</strong> <a href="tel:+56940624638" style="color:#7f57c1;text-decoration:none;">+56&nbsp;9&nbsp;4062&nbsp;4638</a></p>
-                <p>
-                    <a href="https://www.linkedin.com/in/benjamin-henriquezsoto/" target="_blank" style="color:#7f57c1;text-decoration:none;">LinkedIn</a>
-                </p>
-            </div>
+            <!-- Calendly inline widget for scheduling meetings -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/bhenriquezsoto/30min?hide_gdpr_banner=1" style="min-width:320px;height:630px;"></div>
         </div>
     </div>
+    <!-- Load Calendly widget script -->
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
     <!-- Load particles.js from CDN and custom script -->
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>

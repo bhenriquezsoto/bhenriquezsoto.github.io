@@ -90,6 +90,29 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // Handle meeting modal open/close. When the schedule link is clicked,
+  // display the Calendly modal. Allow closing via the × button or clicking
+  // outside the modal content.
+  const scheduleLinks = document.querySelectorAll(".schedule-link");
+  const meetingModal = document.getElementById("meeting-modal");
+  const closeMeetingBtn = meetingModal ? meetingModal.querySelector(".close-button") : null;
+  if (scheduleLinks.length && meetingModal && closeMeetingBtn) {
+    scheduleLinks.forEach(link => {
+      link.addEventListener("click", (e) => {
+        e.preventDefault();
+        meetingModal.style.display = "flex";
+      });
+    });
+    closeMeetingBtn.addEventListener("click", () => {
+      meetingModal.style.display = "none";
+    });
+    window.addEventListener("click", (e) => {
+      if (e.target === meetingModal) {
+        meetingModal.style.display = "none";
+      }
+    });
+  }
 });
 
 /**

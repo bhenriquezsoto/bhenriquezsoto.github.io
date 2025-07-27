@@ -62,7 +62,8 @@ header {
 
 /* Adjust spacing for nav when header is fixed */
 main {
-    max-width: 65%;
+    /* Increase the maximum width to reduce unused whitespace on large screens */
+    max-width: 75%;
     margin: 100px auto 20px auto; /* top margin offsets header height */
     padding: 0 20px 5px;
     background-color: #fff;
@@ -118,6 +119,46 @@ h1 {
     margin-right: auto;
     width: 90%; /* adjust this value as needed */
     margin-bottom: 20px;
+}
+
+/* Left column of the About section: contains the profile picture, social icons and meeting button */
+.about-left {
+    /* Arrange elements vertically */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Align the top of the profile image with the heading */
+    /* Remove top margin so the profile image aligns with the heading */
+    margin-top: 35px;
+    margin-right: 70px;
+}
+
+/* Remove extra right margin on the profile picture when nested in the left column */
+.about-left .profile-pic {
+    margin-right: 0;
+    margin-bottom: 20px;
+    /* Remove top margin inside the left column to align the circle with the heading */
+    margin-top: 0;
+}
+
+/* Social media icons container */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    /* Add more space between the profile image and the icons */
+    margin-top: 20px;
+}
+
+/* Individual icon dimensions */
+.social-icons img {
+    width: 48px;
+    height: 48px;
+}
+
+/* Additional spacing for the schedule meeting button */
+.schedule-button {
+    margin-top: 10px;
 }
 
 .profile-pic {
