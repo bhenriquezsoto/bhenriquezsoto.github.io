@@ -145,7 +145,7 @@ h1 {
 .social-icons {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
     /* Add more space between the profile image and the icons */
     margin-top: 20px;
 }
