@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
 particlesJS("particles-js", {
   particles: {
     number: {
-      value: 60,
+      value: 150,
       density: { enable: true, value_area: 700 },
     },
     // Cambia el color a blanco para mayor contraste
@@ -294,7 +294,7 @@ particlesJS("particles-js", {
     shape: {
       type: "circle",
       stroke: { width: 0, color: "#ffffff" },
-      polygon: { nb_sides: 5 },
+      polygon: { nb_sides: 3 },
     },
     // Aumenta la opacidad
     opacity: { value: 0.7, random: true },
@@ -314,14 +314,14 @@ particlesJS("particles-js", {
       random: false,
       straight: false,
       out_mode: "out",
-      bounce: false,
+      bounce: true,
     },
   },
   interactivity: {
     detect_on: "canvas",
     events: {
       onhover: { enable: true, mode: "grab" },
-      onclick: { enable: false },
+      onclick: { enable: true, mode: "push" },
       resize: true,
     },
     modes: {
