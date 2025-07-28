@@ -24,11 +24,67 @@ document.addEventListener("DOMContentLoaded", () => {
       const content = container ? container.nextElementSibling : null;
       if (content && content.classList.contains("content")) {
         content.style.display = content.style.display === "block" ? "none" : "block";
-        // Centrar el contenedor solo si se está expandiendo
+        // Centrar el contenedor solo si se estÃƒÂ¡ expandiendo
         if (content.style.display === "block") {
           container.scrollIntoView({ behavior: "smooth", block: "center" });
         }
       }
+    });
+  });
+
+  /**
+   * Add expand/collapse functionality for each section.  Each
+   * section header includes two buttons (``.expand-all`` and
+   * ``.collapse-all``) with a data attribute (``data-section-id``)
+   * specifying which section they control.  Clicking "Expand All"
+   * will open every collapsible entry in that section and scroll
+   * the section into view.  Clicking "Collapse All" will close all
+   * entries and also bring the section header into view.
+   */
+  const expandButtons = document.querySelectorAll('.expand-all');
+  const collapseButtons = document.querySelectorAll('.collapse-all');
+
+  expandButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sectionId = btn.dataset.sectionId;
+      const section = document.getElementById(sectionId);
+      if (!section) return;
+      // Expand every collapsible within the section
+      section.querySelectorAll('.collapsible').forEach(collBtn => {
+        const container = collBtn.closest('.collapsible-container');
+        const content = container ? container.nextElementSibling : null;
+        collBtn.classList.add('active');
+        if (content && content.classList.contains('content')) {
+          content.style.display = 'block';
+        }
+      });
+      // Scroll the section header into view (just below the fixed nav bar)
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : 0;
+      const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({ top: sectionTop - headerHeight - 10, behavior: 'smooth' });
+    });
+  });
+
+  collapseButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sectionId = btn.dataset.sectionId;
+      const section = document.getElementById(sectionId);
+      if (!section) return;
+      // Collapse every collapsible within the section
+      section.querySelectorAll('.collapsible').forEach(collBtn => {
+        const container = collBtn.closest('.collapsible-container');
+        const content = container ? container.nextElementSibling : null;
+        collBtn.classList.remove('active');
+        if (content && content.classList.contains('content')) {
+          content.style.display = 'none';
+        }
+      });
+      // Scroll the section header into view (below fixed nav bar)
+      const header = document.querySelector('header');
+      const headerHeight = header ? header.offsetHeight : 0;
+      const sectionTop = section.getBoundingClientRect().top + window.pageYOffset;
+      window.scrollTo({ top: sectionTop - headerHeight - 10, behavior: 'smooth' });
     });
   });
 
@@ -43,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const headerHeight = header ? header.offsetHeight : 0;
         const sectionTop = targetSection.getBoundingClientRect().top + window.pageYOffset;
         window.scrollTo({
-          top: sectionTop - headerHeight - 10, // el -10 es un pequeño margen opcional
+          top: sectionTop - headerHeight - 10, // el -10 es un pequeÃƒÂ±o margen opcional
           behavior: 'smooth'
         });
       }
@@ -69,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Handle contact modal open/close. When the contact link is clicked,
-  // display the modal. Allow closing via the × button or clicking
+  // display the modal. Allow closing via the Ãƒâ€” button or clicking
   // outside the modal content.
   const contactLinks = document.querySelectorAll(".contact-link");
   const contactModal = document.getElementById("contact-modal");
@@ -92,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Handle meeting modal open/close. When the schedule link is clicked,
-  // display the Calendly modal. Allow closing via the × button or clicking
+  // display the Calendly modal. Allow closing via the Ãƒâ€” button or clicking
   // outside the modal content.
   const scheduleLinks = document.querySelectorAll(".schedule-link");
   const meetingModal = document.getElementById("meeting-modal");
@@ -113,7 +169,47 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
+  // After all handlers have been attached, apply dynamic numbering to
+  // all collapsible entries across projects, experience, education and
+  // certifications.  This ensures numbers update automatically when
+  // entries are added or removed.  Without this call the old arrow
+  // symbols may still appear in some browsers.
+  applyNumbering();
 });
+
+/**
+ * Dynamically number all collapsible entries in the specified sections.
+ * The function scans each section (projects, experience, education and
+ * certifications) for buttons with class ``collapsible`` and prepends
+ * a ``<span>`` with the number (e.g., "1. ") to the title.  If a
+ * previous numbering span exists (identified by the class ``entry-number``),
+ * it is removed to avoid duplication.  This numbering runs once when
+ * the DOM loads but can be invoked again if entries are dynamically
+ * inserted later.
+ */
+function applyNumbering() {
+  const sectionIds = ['projects', 'experience', 'education', 'certifications'];
+  sectionIds.forEach(sectionId => {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+    // Remove existing numbering spans
+    section.querySelectorAll('.entry-number').forEach(span => span.remove());
+    // Enumerate collapsible buttons in the section
+    const buttons = section.querySelectorAll('.collapsible');
+    buttons.forEach((btn, idx) => {
+      const titleSpan = btn.querySelector('.title');
+      if (!titleSpan) return;
+      // Create a new number span
+      const numberSpan = document.createElement('span');
+      numberSpan.className = 'entry-number';
+      numberSpan.textContent = (idx + 1) + '. ';
+      numberSpan.style.fontWeight = 'bold';
+      // Prepend number before the existing title content
+      titleSpan.insertBefore(numberSpan, titleSpan.firstChild);
+    });
+  });
+}
 
 /**
  * Toggle the visibility of elements based on the selected language.
@@ -148,6 +244,43 @@ function setLanguage(lang) {
   });
 }
 
+/**
+ * Dynamically number all collapsible entries in the specified sections.
+ * This function scans each section (projects, experience, education
+ * and certifications) for collapsible buttons and prepends a number
+ * (e.g. "1. ") to the title.  If a number already exists from a
+ * previous run, it is removed before inserting the new numbering.
+ */
+function applyNumbering() {
+  const sectionIds = ['projects', 'experience', 'education', 'certifications'];
+  sectionIds.forEach(sectionId => {
+    const section = document.getElementById(sectionId);
+    if (!section) return;
+    // Remove existing numbering spans to avoid duplication
+    section.querySelectorAll('.entry-number').forEach(span => span.remove());
+    const buttons = section.querySelectorAll('.collapsible');
+    buttons.forEach((btn, idx) => {
+      const titleSpan = btn.querySelector('.title');
+      if (titleSpan) {
+        const numberSpan = document.createElement('span');
+        numberSpan.className = 'entry-number';
+        numberSpan.textContent = (idx + 1) + '. ';
+        numberSpan.style.fontWeight = 'bold';
+        // Prepend number before all other nodes in title
+        titleSpan.insertBefore(numberSpan, titleSpan.firstChild);
+      }
+    });
+  });
+}
+
+// Apply numbering after the DOM and language have been set.  This
+// ensures that numbering appears for the visible titles in either
+// language.  Numbering is called once at load time but can be
+// reÃ¢â‚¬â€˜executed if new entries are dynamically inserted in the future.
+document.addEventListener('DOMContentLoaded', () => {
+  applyNumbering();
+});
+
 // Configure the particle animation in the background. See
 // https://github.com/VincentGarreau/particles.js for more options.
 particlesJS("particles-js", {
@@ -165,7 +298,7 @@ particlesJS("particles-js", {
     },
     // Aumenta la opacidad
     opacity: { value: 0.7, random: true },
-    // Aumenta el tamaño
+    // Aumenta el tamaÃƒÂ±o
     size: { value: 3.5, random: true },
     line_linked: {
       enable: true,

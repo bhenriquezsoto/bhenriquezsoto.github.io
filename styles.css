@@ -22,7 +22,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* Cambiado a azul sólido */
+    /* Cambiado a azul sÃƒÂ³lido */
     background: #1b263b;
     padding: 10px 20px;
     color: #eceff4;
@@ -215,15 +215,16 @@ h1 {
 }
 
 .collapsible::before {
-    content: "▸";
+    /* Reserve space for numbering; the actual content is provided via counters per section */
     margin-right: 10px;
-    font-size: 12px;
-    transform: rotate(0deg);
-    transition: transform 0.3s ease;
+    font-size: 14px;
+    font-weight: bold;
 }
 
+/* Remove arrow rotation styling since numbering is used instead */
 .collapsible.active::before {
-    transform: rotate(90deg);
+    /* No rotation needed; active state bolding is handled via font-weight */
+    transform: none;
 }
 
 .collapsible.active {
@@ -462,7 +463,7 @@ footer {
  * The following media query adjusts the layout for smaller screens.  When
  * the viewport width drops below 768px (common breakpoint for tablets
  * and phones) the navigation bar stacks its elements, the main content
- * area widens, and the about section shifts from a side‑by‑side layout
+ * area widens, and the about section shifts from a sideÃ¢â‚¬â€˜byÃ¢â‚¬â€˜side layout
  * to a stacked layout.  Collapsible rows and certification items also
  * adopt a columnar layout, and excessive left padding on the content
  * sections is reduced.  These adjustments ensure that text and controls
@@ -566,6 +567,87 @@ footer .icon {
     width: 24px;
     vertical-align: middle;
     margin-right: 5px;
+}
+
+/* --------------------------------------------------------------------
+ * Dynamic numbering for collapsible entries
+ *
+ * Each of the main sections (Projects, Experience, Education and
+ * Certifications) uses a separate CSS counter.  When a new
+ * collapsible entry (``.collapsible``) is added to a section, its
+ * corresponding counter is incremented automatically and the number
+ * is displayed before the title.  This ensures that numbering
+ * updates dynamically when entries are added or removed without
+ * requiring manual adjustment.
+ */
+/* Reset counters no longer needed for dynamic numbering; numbering handled by JavaScript */
+#projects {
+    counter-reset: project-counter;
+}
+#projects .collapsible::before {
+    /* Numbering is handled in script.js; leave pseudo-element empty */
+    content: "";
+}
+
+#experience {
+    counter-reset: experience-counter;
+}
+#experience .collapsible::before {
+    content: "";
+}
+
+#education {
+    counter-reset: education-counter;
+}
+#education .collapsible::before {
+    content: "";
+}
+
+#certifications {
+    counter-reset: cert-counter;
+    margin-bottom: 30px;
+}
+#certifications .collapsible::before {
+    content: "";
+}
+
+/* Styles for section headers and expand/collapse buttons */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* Container for the expand/collapse buttons */
+.section-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+/* Style individual expand/collapse buttons */
+.section-buttons button {
+    background-color: transparent;
+    color: #7f57c9;
+    border: 1px solid #a173c9;
+    border-radius: 4px;
+    padding: 4px 10px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: all 0.3s ease;
+}
+
+.section-buttons button:hover {
+    background-color: #a173c9;
+    color: white;
+}
+
+/* Provide spacing for the dynamically inserted numbering spans.  These
+   numbers are generated via JavaScript and appear at the beginning
+   of each collapsible title. */
+.entry-number {
+    margin-right: 6px;
+    font-weight: bold;
 }
 
 #particles-js {

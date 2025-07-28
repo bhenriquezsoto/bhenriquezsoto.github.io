@@ -85,7 +85,18 @@
 
         <!-- Projects Section (bilingual with collapsible items) -->
         <section id="projects">
-            <h2><span class="lang-en">Projects</span><span class="lang-es">Proyectos</span></h2>
+            <!-- Section header with expand/collapse controls on the right -->
+            <div class="section-header">
+                <h2><span class="lang-en">Projects</span><span class="lang-es">Proyectos</span></h2>
+                <div class="section-buttons">
+                    <button class="expand-all" data-section-id="projects">
+                        <span class="lang-en">Expand&nbsp;All</span><span class="lang-es">Expandir&nbsp;todo</span>
+                    </button>
+                    <button class="collapse-all" data-section-id="projects">
+                        <span class="lang-en">Collapse&nbsp;All</span><span class="lang-es">Contraer&nbsp;todo</span>
+                    </button>
+                </div>
+            </div>
 
             <!-- Computer Vision Project: Pet Segmentation -->
             <div class="collapsible-container">
@@ -204,7 +215,18 @@
 
         <!-- Experience Section (bilingual with collapsible items) -->
         <section id="experience">
-            <h2><span class="lang-en">Experience</span><span class="lang-es">Experiencia</span></h2>
+            <!-- Section header with expand/collapse controls on the right -->
+            <div class="section-header">
+                <h2><span class="lang-en">Experience</span><span class="lang-es">Experiencia</span></h2>
+                <div class="section-buttons">
+                    <button class="expand-all" data-section-id="experience">
+                        <span class="lang-en">Expand&nbsp;All</span><span class="lang-es">Expandir&nbsp;todo</span>
+                    </button>
+                    <button class="collapse-all" data-section-id="experience">
+                        <span class="lang-en">Collapse&nbsp;All</span><span class="lang-es">Contraer&nbsp;todo</span>
+                    </button>
+                </div>
+            </div>
 
             <!-- Undergraduate Research Assistant (drones) -->
             <div class="collapsible-container">
@@ -384,7 +406,18 @@
 
         <!-- Education Section (bilingual) -->
         <section id="education">
-            <h2><span class="lang-en">Education</span><span class="lang-es">Educación</span></h2>
+            <!-- Section header with expand/collapse controls on the right -->
+            <div class="section-header">
+                <h2><span class="lang-en">Education</span><span class="lang-es">Educación</span></h2>
+                <div class="section-buttons">
+                    <button class="expand-all" data-section-id="education">
+                        <span class="lang-en">Expand&nbsp;All</span><span class="lang-es">Expandir&nbsp;todo</span>
+                    </button>
+                    <button class="collapse-all" data-section-id="education">
+                        <span class="lang-en">Collapse&nbsp;All</span><span class="lang-es">Contraer&nbsp;todo</span>
+                    </button>
+                </div>
+            </div>
             <!-- Collapsible education entries -->
             <div class="collapsible-container">
                 <button class="collapsible">
@@ -460,20 +493,85 @@
 
         <!-- Certifications &amp; Honors Section (bilingual) -->
         <section id="certifications">
-            <h2><span class="lang-en">Certifications &amp; Honors</span><span class="lang-es">Certificaciones y Reconocimientos</span></h2>
-            <div class="lang-en">
-                <ul>
-                    <li>Deep Learning Specialization – <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/RJCRBZLAW5QS" target="_blank" style="color: #7f57c1; text-decoration: none;">Coursera&nbsp;Certificate</a></li>
-                    <li>IELTS Academic (Level C1)</li>
-                    <li>3rd place DO‑SAFIOS competition</li>
-                </ul>
+            <!-- Section header with expand/collapse controls on the right -->
+            <div class="section-header">
+                <h2><span class="lang-en">Certifications &amp; Honors</span><span class="lang-es">Certificaciones y Reconocimientos</span></h2>
+                <div class="section-buttons">
+                    <button class="expand-all" data-section-id="certifications">
+                        <span class="lang-en">Expand&nbsp;All</span><span class="lang-es">Expandir&nbsp;todo</span>
+                    </button>
+                    <button class="collapse-all" data-section-id="certifications">
+                        <span class="lang-en">Collapse&nbsp;All</span><span class="lang-es">Contraer&nbsp;todo</span>
+                    </button>
+                </div>
             </div>
-            <div class="lang-es">
-                <ul>
-                    <li>Especialización en Deep Learning – <a href="https://www.coursera.org/account/accomplishments/specialization/certificate/RJCRBZLAW5QS" target="_blank" style="color: #7f57c1; text-decoration: none;">Certificado&nbsp;de&nbsp;Coursera</a></li>
-                    <li>IELTS Académico (Nivel C1)</li>
-                    <li>3er lugar competencia DO‑SAFIOS</li>
-                </ul>
+
+            <!-- Deep Learning Specialization -->
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    <span class="title">
+                        <span class="lang-en">Deep Learning Specialization</span>
+                        <span class="lang-es">Especialización en Deep Learning</span>
+                    </span>
+                </button>
+            </div>
+            <div class="content">
+                <div class="lang-en">
+                    <p>Coursera specialization covering fundamental concepts of deep learning, including neural networks, convolutional neural networks and sequence models, taught by Andrew&nbsp;Ng.</p>
+                    <p>More details: <a href="https://www.coursera.org/specializations/deep-learning" target="_blank" style="color: #7f57c9; text-decoration: none;">Deep Learning Specialization</a></p>
+                </div>
+                <div class="lang-es">
+                    <p>Especialización de Coursera que abarca conceptos fundamentales de aprendizaje profundo, incluyendo redes neuronales, redes convolucionales y modelos secuenciales, impartida por Andrew&nbsp;Ng.</p>
+                    <p>Más detalles: <a href="https://www.coursera.org/specializations/deep-learning" target="_blank" style="color: #7f57c9; text-decoration: none;">Especialización en Deep Learning</a></p>
+                </div>
+            </div>
+
+            <!-- IELTS Academic -->
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    <span class="title">
+                        <span class="lang-en">IELTS Academic (Level C1)</span>
+                        <span class="lang-es">IELTS Académico (Nivel C1)</span>
+                    </span>
+                </button>
+            </div>
+            <div class="content">
+                <div class="lang-en">
+                    <ul>
+                        <li>Listening: 6.5/9</li>
+                        <li>Writing: 6.5/9</li>
+                        <li>Listening: 8.0/9</li>
+                        <li>Reading: 8.5/9</li>
+                    </ul>
+                </div>
+                <div class="lang-es">
+                    <ul>
+                        <li>Comprensión auditiva: 6.5/9</li>
+                        <li>Escritura: 6.5/9</li>
+                        <li>Comprensión auditiva: 8.0/9</li>
+                        <li>Lectura: 8.5/9</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- DO‑SAFIOS competition -->
+            <div class="collapsible-container">
+                <button class="collapsible">
+                    <span class="title">
+                        <span class="lang-en">3rd place DO‑SAFIOS competition</span>
+                        <span class="lang-es">3er lugar competencia DO‑SAFIOS</span>
+                    </span>
+                </button>
+            </div>
+            <div class="content">
+                <div class="lang-en">
+                    <p>Datathon organized by the Chilean Air Force. Achieved third place by developing data‑driven solutions for wildfire management in the forest‑fire section.</p>
+                    <p><a href="https://www.dosafios.cl/" target="_blank" style="color: #7f57c9; text-decoration: none;">www.dosafios.cl</a></p>
+                </div>
+                <div class="lang-es">
+                    <p>Datatón organizada por la Fuerza Aérea de Chile. Logramos el tercer lugar desarrollando soluciones basadas en datos para la gestión de incendios forestales en la sección de incendios.</p>
+                    <p><a href="https://www.dosafios.cl/" target="_blank" style="color: #7f57c9; text-decoration: none;">www.dosafios.cl</a></p>
+                </div>
             </div>
         </section>
 
